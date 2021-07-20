@@ -12,7 +12,6 @@ const Header = () => {
           <ul>
             <li>My jobs</li>
             <li>Career Search</li>
-            <li>Prefrences</li>
             <li>my zippia</li>
           </ul>
         </nav>

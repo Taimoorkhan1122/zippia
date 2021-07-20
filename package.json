@@ -20,6 +20,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "formik": "^2.2.9",
+    "moment": "^2.29.1",
+    "react-slick": "^0.28.1",
     "yup": "^0.32.9"
   },
   "devDependencies": {

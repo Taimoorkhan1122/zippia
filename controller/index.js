@@ -1,5 +1,4 @@
 const axios = require('axios');
-const { request } = require('http');
 
 exports.getJobs = async (req, res) => {
     const {title} = req.query;

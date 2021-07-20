@@ -5,20 +5,22 @@ import { TextField, Button } from "@material-ui/core";
 import styles from './search.module.css';
 
 import * as Yup from "yup";
+import { fetchPopuplarJobs } from '../api';
 
 
-const Search = () => {
+const Search = ({setData}) => {
     return (
       <div className={styles.searchContainer}>
         <Formik
           initialValues={{ search: "" }}
-          onSubmit={(values) => {
-            console.log("submitting", values);
+          onSubmit={async (values) => {
+            const query = values.search.replace(" ", "%20")
+            setData(await fetchPopuplarJobs(query));
           }}
           validationSchema={Yup.object({
             name: Yup.string().max(50, "maximum 50 characters are allowed!"),
           })}>
-          {({ handleSubmit, handleChange, values }) => (
+          {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <Field
                 name="search"
@@ -32,7 +34,7 @@ const Search = () => {
                 name="search"
                 render={(msg) => <span style={{ color: "red" }}>{msg}</span>}
               />
-              <Button variant="contained">Search</Button>
+              <Button type="submit" variant="contained">Search</Button>
             </form>
           )}
         </Formik>
