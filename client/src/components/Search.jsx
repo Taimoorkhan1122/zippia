@@ -16,12 +16,10 @@ const Search = () => {
             console.log("submitting", values);
           }}
           validationSchema={Yup.object({
-            name: Yup.string()
-              .max(50, "maximum 50 characters are allowed!")
+            name: Yup.string().max(50, "maximum 50 characters are allowed!"),
           })}>
           {({ handleSubmit, handleChange, values }) => (
             <form onSubmit={handleSubmit}>
-              {console.log("rendering")}
               <Field
                 name="search"
                 type="text"
@@ -31,10 +29,10 @@ const Search = () => {
                 label="search job"
               />
               <ErrorMessage
-                name="name"
+                name="search"
                 render={(msg) => <span style={{ color: "red" }}>{msg}</span>}
               />
-              <Button variant="contained" >Search</Button>
+              <Button variant="contained">Search</Button>
             </form>
           )}
         </Formik>
