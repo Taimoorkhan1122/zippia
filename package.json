@@ -14,9 +14,12 @@
   "author": "taimoor khan",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.12.2",
     "axios": "^0.21.1",
     "concurrently": "^6.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "formik": "^2.2.9",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
