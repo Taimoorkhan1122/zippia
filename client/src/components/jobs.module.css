@@ -21,22 +21,23 @@
   height: 255px;
   flex-grow: 0;
   margin: 10px 10px 35px;
-  padding: 20px;
+  padding: 20px 30px 20px 20px;
   border-radius: 12px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.125);
   background-color: rgb(255, 255, 255);
 }
 .card .tags {
     display: flex;
+    flex-wrap: wrap;
     margin: 10px 0;
 }
 .card .tags > span {
     width: fit-content;
     background: rgb(176, 204, 255);
-    font-size: 12px;
+    font-size: 10px;
     border-radius: 10px;
-    margin: 0 10px;
-    padding: 5px 10px;
+    margin: 5px;
+    padding: 5px;
     color: rgb(68, 113, 197);
 }
 
@@ -49,10 +50,17 @@
     text-transform: uppercase;
 }
 
+.card .cname {
+    font-weight: 500;
+    color: #2c2c2c;
+    margin: 10px 0;
+}
+
 .card .details {
-    width: 85%;
+    width: 100%;
     font-size: 16px;
     line-height: 1.26;
+    word-break: break-word;
 }
 
 @media (min-width: 540px) {
@@ -60,6 +68,7 @@
         flex-basis: 300px;
     }
 }
+
 @media (min-width: 768px) {
     .cardsContainer {
         justify-content: start;
@@ -71,6 +80,6 @@
 
 @media (min-width: 1280px) {
     .card {
-        flex-basis: 360 px;
+        flex-basis: 250px;
     }
 }
