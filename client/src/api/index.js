@@ -30,9 +30,8 @@ export const fetchPastWeekJobs = (data) => {
 
       data.jobs.filter((job) => {
         const postingDate = getDate(job.OBJpostingDate);
-        if (postingDate <= 7) {
-          recentData.jobs.push(job);
-        }
+        return postingDate <= 7  && recentData.jobs.push(job);
+        
       });
       console.log(recentData);
     return {data: recentData, found: true};
