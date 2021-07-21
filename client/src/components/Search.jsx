@@ -14,13 +14,13 @@ const Search = ({setData}) => {
         <Formik
           initialValues={{ search: "" }}
           onSubmit={async (values) => {
-            const query = values.search.replace(" ", "%20")
+            const query = values.search.replace(" ", "%20");
             setData(await fetchPopuplarJobs(query));
           }}
           validationSchema={Yup.object({
             name: Yup.string().max(50, "maximum 50 characters are allowed!"),
           })}>
-          {({ handleSubmit }) => (
+          {({ handleSubmit, values }) => (
             <form onSubmit={handleSubmit}>
               <Field
                 name="search"
@@ -34,7 +34,9 @@ const Search = ({setData}) => {
                 name="search"
                 render={(msg) => <span style={{ color: "red" }}>{msg}</span>}
               />
-              <Button type="submit" variant="contained">Search</Button>
+              <Button type="submit" disabled={values.search.length === 0} variant="contained">
+                Search
+              </Button>
             </form>
           )}
         </Formik>

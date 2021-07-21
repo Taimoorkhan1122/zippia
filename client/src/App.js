@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { GridLoader } from 'react-spinners';
 
 import Header from './components/Header';
 import Homepage from './components/Homepage';
@@ -16,7 +17,7 @@ function App() {
   }, [])
   console.log(jobs);
 
-  if(!jobs || jobs.length === 0) return <div>...loading!</div>
+  if(!jobs || jobs.length === 0) return <GridLoader color="#0e0702" size={25} />;
   return (
 
     <div className="container">

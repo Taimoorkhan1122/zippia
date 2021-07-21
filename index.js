@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   return res.send({message: "api is working"})
 })
 
-app.use("/test", jobsRoute);
+app.use('/api/test', jobsRoute);
 
 
 app.listen(port, () => {
